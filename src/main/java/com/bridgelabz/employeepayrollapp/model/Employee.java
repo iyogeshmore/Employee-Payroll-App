@@ -1,5 +1,7 @@
 package com.bridgelabz.employeepayrollapp.model;
 
+import com.bridgelabz.employeepayrollapp.dto.EmployeeDTO;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,6 +16,13 @@ public class Employee {
 
     public String getName() {
         return name;
+    }
+    public Employee(int empId, EmployeeDTO employeeDTO) {
+        this.id = empId;
+        this.name = employeeDTO.name;
+        this.department = employeeDTO.department;
+        this.gender = employeeDTO.gender;
+        this.salary = String.valueOf(employeeDTO.salary);
     }
     @Id
     @GeneratedValue

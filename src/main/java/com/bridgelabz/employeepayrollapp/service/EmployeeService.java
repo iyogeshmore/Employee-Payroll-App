@@ -16,12 +16,12 @@ public class EmployeeService implements iEmployeeService{
     @Autowired
     private EmployeeRepository employeeRepository;
     @Override
-    public Employee saveEmployees(Employee employee) {
-        return employeeRepository.save(employee);
-    }
-    @Override
     public Employee findEmployeeById(Integer id) {
         return employeeRepository.findById(id).orElse(null);
+    }
+    @Override
+    public Employee saveEmployees(Employee employee){
+        return employeeRepository.save(employee);
     }
     @Override
     public List<Employee> findEmployees() {
@@ -41,6 +41,5 @@ public class EmployeeService implements iEmployeeService{
         return "Data Deleted";
     }
 }
-
 
 
