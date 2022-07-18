@@ -1,45 +1,39 @@
 package com.bridgelabz.employeepayrollapp.service;
 
+import com.bridgelabz.employeepayrollapp.dto.EmployeeDTO;
 import com.bridgelabz.employeepayrollapp.model.Employee;
-import com.bridgelabz.employeepayrollapp.repository.EmployeeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class EmployeeService implements iEmployeeService{
-    public String employeeMessage(){
-        return "Hello World";
-    }
-    //--------------- UC 2 ---------------//
-    @Autowired
-    private EmployeeRepository employeeRepository;
     @Override
-    public Employee findEmployeeById(Integer id) {
-        return employeeRepository.findById(id).orElse(null);
+    public List<Employee> getEmployeeData() {
+        List<Employee> empDataList = new ArrayList<>();
+        empDataList.add(new Employee(1, new EmployeeDTO("Yogesh", "male", "Engg.", 35000)));
+        return empDataList;
     }
     @Override
-    public Employee saveEmployees(Employee employee){
-        return employeeRepository.save(employee);
+    public Employee getEmployeePayrollDataById(int empId) {
+        Employee  empData= null;
+        empData= new Employee (1, new EmployeeDTO("Yogesh", "male", "Engg", 35000));
+        return empData;
     }
     @Override
-    public List<Employee> findEmployees() {
-        return employeeRepository.findAll();
+    public Employee createEmployeePayrollData(EmployeeDTO employeeDTO){
+        Employee empData= null;
+        empData= new Employee(1, employeeDTO);
+        return empData;
     }
     @Override
-    public Employee editEmployee(Employee employee, Integer id) {
-        Employee existingGreet = employeeRepository.findById(id).orElse(null);
-        if (existingGreet != null) {
-            existingGreet.setName(employee.getName()); ;
-            return employeeRepository.save(existingGreet);
-        }else return null;
+    public Employee updateEmployeePayrollData(EmployeeDTO employeeDTO) {
+        Employee empData= null;
+        empData = new Employee(1, employeeDTO);
+        return empData;
     }
-    @Override
-    public String deleteEmployee(Integer id) {
-        employeeRepository.deleteById(id);
-        return "Data Deleted";
+
+    public void deleteEmployeePayrollData(int empID) {
     }
 }
-
-

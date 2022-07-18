@@ -1,15 +1,16 @@
 package com.bridgelabz.employeepayrollapp.service;
 
+import com.bridgelabz.employeepayrollapp.dto.EmployeeDTO;
 import com.bridgelabz.employeepayrollapp.model.Employee;
 
 import java.util.List;
 
 public interface iEmployeeService {
-    Employee saveEmployees(Employee employee);
-    Employee findEmployeeById(Integer id);
-    List<Employee> findEmployees();
+    List<Employee> getEmployeeData();
 
-    Employee editEmployee(Employee employee, Integer id);
+    Employee getEmployeePayrollDataById(int empId);
 
-    String deleteEmployee(Integer id);
+    Employee createEmployeePayrollData(EmployeeDTO employeeDTO);
+
+    Employee updateEmployeePayrollData(EmployeeDTO employeeDTO);
 }
