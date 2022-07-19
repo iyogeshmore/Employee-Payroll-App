@@ -9,13 +9,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 public class  EmpPayrollController {
-    public static final String template = "Welcome To The Payroll App,%s";
-
     @Autowired
     EmployeeService service;
     List<Employee> empDatalist = new ArrayList<>();
@@ -35,7 +34,7 @@ public class  EmpPayrollController {
 
     @PostMapping("/add")
     public ResponseEntity<ResponseDTO> createEmployeePayrollData(
-            @RequestBody EmployeeDTO empPayrollDTO) {
+            @Valid @RequestBody EmployeeDTO empPayrollDTO) {
         Employee empData = null;
         empData = service.createEmployeePayrollData(empPayrollDTO);
         ResponseDTO respOTO= new ResponseDTO("Created Employee Payroll Data Successfully", empData);

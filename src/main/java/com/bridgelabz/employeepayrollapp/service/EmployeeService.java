@@ -2,6 +2,8 @@ package com.bridgelabz.employeepayrollapp.service;
 
 import com.bridgelabz.employeepayrollapp.dto.EmployeeDTO;
 import com.bridgelabz.employeepayrollapp.model.Employee;
+import com.bridgelabz.employeepayrollapp.repository.EmployeeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,6 +11,8 @@ import java.util.List;
 
 @Service
 public class EmployeeService implements iEmployeeService{
+    @Autowired
+    EmployeeRepository repository;
     private List<Employee> employeeList = new ArrayList<>();
     @Override
     public List<Employee> getEmployeeData() {
@@ -20,17 +24,15 @@ public class EmployeeService implements iEmployeeService{
     }
     @Override
     public Employee createEmployeePayrollData(EmployeeDTO employeeDTO){
-        Employee empData= null;
-        empData= new Employee(employeeList.size()+1, employeeDTO);
+        Employee empData= new Employee(employeeList.size()+1, employeeDTO);
         employeeList.add(empData);
-        return empData;
+        return repository.save(empData);
     }
     @Override
     public void deleteEmployeePayrollData(int empID) {
         employeeList.remove(empID-1);
     }
 
-    //    ***********UC6**********************
     @Override
     public Employee updateEmployeePayrollData(int empId, EmployeeDTO employeeDTO){
         Employee empData = this.getEmployeePayrollDataById(empId);

@@ -1,22 +1,25 @@
 package com.bridgelabz.employeepayrollapp.model;
 
 import com.bridgelabz.employeepayrollapp.dto.EmployeeDTO;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
+@Data
+@RequiredArgsConstructor
 public class Employee {
     String name;
     String department;
     String gender;
     String salary;
-    int id;
+    @Id
+    @GeneratedValue
 
-    public String getName() {
-        return name;
-    }
+    int id;
     public Employee(int empId, EmployeeDTO employeeDTO) {
         this.id = empId;
         this.name = employeeDTO.name;
@@ -24,46 +27,6 @@ public class Employee {
         this.gender = employeeDTO.gender;
         this.salary = String.valueOf(employeeDTO.salary);
     }
-    @Id
-    @GeneratedValue
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getSalary() {
-        return salary;
-    }
-
-    public void setSalary(String salary) {
-        this.salary = salary;
-    }
-
-    public Employee(){
-    }
 }
 
