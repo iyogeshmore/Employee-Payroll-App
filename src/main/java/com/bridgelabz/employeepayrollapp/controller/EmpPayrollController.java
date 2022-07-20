@@ -4,6 +4,7 @@ import com.bridgelabz.employeepayrollapp.dto.EmployeeDTO;
 import com.bridgelabz.employeepayrollapp.dto.ResponseDTO;
 import com.bridgelabz.employeepayrollapp.model.Employee;
 import com.bridgelabz.employeepayrollapp.service.iEmployeeService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @RestController
 public class  EmpPayrollController {
     @Autowired
@@ -27,7 +29,7 @@ public class  EmpPayrollController {
     }
     @GetMapping("/get/{empId}")
     public ResponseEntity<ResponseDTO> getEmployeePayrollData(@PathVariable("empId") int empID) {
-        Employee  empData = service.getEmployeePayrollDataById(empID);
+        Employee empData = service.getEmployeePayrollDataById(empID);
         ResponseDTO respDTO= new ResponseDTO("Get Call For ID Successful", empData);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
@@ -35,7 +37,7 @@ public class  EmpPayrollController {
     @PostMapping("/add")
     public ResponseEntity<ResponseDTO> createEmployeePayrollData(
             @Valid @RequestBody EmployeeDTO empPayrollDTO) {
-        Employee  empData = service.createEmployeePayrollData(empPayrollDTO);
+        Employee empData = service.createEmployeePayrollData(empPayrollDTO);
         ResponseDTO respOTO= new ResponseDTO("Created Employee Payroll Data Successfully", empData);
         return new ResponseEntity<ResponseDTO>(respOTO, HttpStatus.OK);
     }
@@ -53,5 +55,4 @@ public class  EmpPayrollController {
         ResponseDTO respDTO= new ResponseDTO("Deleted Successfully", "Deleted id: "+empId);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
-
 }

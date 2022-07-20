@@ -14,6 +14,5 @@ public interface iEmployeeService {
 
     Employee updateEmployeePayrollData(int empId, EmployeeDTO employeeDTO);
 
-    void deleteEmployeePayrollData(int empID);
-
+    String deleteEmployeePayrollData(int empID);
 }
