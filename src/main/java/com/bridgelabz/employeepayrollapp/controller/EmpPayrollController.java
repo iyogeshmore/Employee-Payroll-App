@@ -3,7 +3,7 @@ package com.bridgelabz.employeepayrollapp.controller;
 import com.bridgelabz.employeepayrollapp.dto.EmployeeDTO;
 import com.bridgelabz.employeepayrollapp.dto.ResponseDTO;
 import com.bridgelabz.employeepayrollapp.model.Employee;
-import com.bridgelabz.employeepayrollapp.service.EmployeeService;
+import com.bridgelabz.employeepayrollapp.service.iEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,8 +16,9 @@ import java.util.List;
 @RestController
 public class  EmpPayrollController {
     @Autowired
-    EmployeeService service;
-    List<Employee> empDatalist = new ArrayList<>();
+    iEmployeeService service;
+    List <Employee> empDatalist = new ArrayList<>();
+
     @RequestMapping(value = {"","/", "/get"})
     public ResponseEntity<ResponseDTO> getEmployeePayrollData() {
         empDatalist = service.getEmployeeData();
@@ -26,8 +27,7 @@ public class  EmpPayrollController {
     }
     @GetMapping("/get/{empId}")
     public ResponseEntity<ResponseDTO> getEmployeePayrollData(@PathVariable("empId") int empID) {
-        Employee empData= null;
-        empData = service.getEmployeePayrollDataById(empID);
+        Employee  empData = service.getEmployeePayrollDataById(empID);
         ResponseDTO respDTO= new ResponseDTO("Get Call For ID Successful", empData);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
@@ -35,16 +35,14 @@ public class  EmpPayrollController {
     @PostMapping("/add")
     public ResponseEntity<ResponseDTO> createEmployeePayrollData(
             @Valid @RequestBody EmployeeDTO empPayrollDTO) {
-        Employee empData = null;
-        empData = service.createEmployeePayrollData(empPayrollDTO);
+        Employee  empData = service.createEmployeePayrollData(empPayrollDTO);
         ResponseDTO respOTO= new ResponseDTO("Created Employee Payroll Data Successfully", empData);
         return new ResponseEntity<ResponseDTO>(respOTO, HttpStatus.OK);
     }
 
     @PutMapping("/update/{empID}")
     public ResponseEntity<ResponseDTO> updateEmployeePayrollData(@PathVariable("empID") int empID, @RequestBody EmployeeDTO employeeDTO) {
-        Employee empData = null;
-        empData = service.updateEmployeePayrollData(empID,employeeDTO);
+        Employee empData = service.updateEmployeePayrollData(empID,employeeDTO);
         ResponseDTO respDTO= new ResponseDTO("Updated Employee Payroll Data Successfully", empData);
         return new ResponseEntity <ResponseDTO>(respDTO, HttpStatus.OK);
     }

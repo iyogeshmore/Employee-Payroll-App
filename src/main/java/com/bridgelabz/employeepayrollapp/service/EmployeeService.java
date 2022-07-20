@@ -43,7 +43,7 @@ public class EmployeeService implements iEmployeeService{
         empData.setName(employeeDTO.name);
         empData.setDepartment(employeeDTO.department);
         empData.setGender(employeeDTO.gender);
-        empData.setSalary(String.valueOf(employeeDTO.salary));
+        empData.setSalary(employeeDTO.salary);
         employeeList.set(empId - 1, empData);
         return empData;
     }
