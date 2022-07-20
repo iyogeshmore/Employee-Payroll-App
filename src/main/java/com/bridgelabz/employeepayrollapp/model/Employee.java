@@ -8,9 +8,11 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
-@Entity
 @Data
 @RequiredArgsConstructor
+@Entity
+@Table(name = "employee")
+
 public class Employee {
     @Id
     @Column(name = "employee_id")
@@ -23,7 +25,6 @@ public class Employee {
     private String profilePic;
     private String note;
     private LocalDate startDate;
-
     @CollectionTable(name = "employee_department",joinColumns = @JoinColumn(name = "id"))
     @ElementCollection
     public List<String> department;

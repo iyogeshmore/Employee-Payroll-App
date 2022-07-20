@@ -10514,3 +10514,344 @@ java.lang.UnsupportedOperationException: null
 2022-2022-07 10:35 [INFO][SpringApplicationShutdownHook][o.s.o.j.LocalContainerEntityManagerFactoryBean:651] Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-2022-07 10:35 [INFO][SpringApplicationShutdownHook][c.z.h.HikariDataSource:350] HikariPool-1 - Shutdown initiated...
 2022-2022-07 10:35 [INFO][SpringApplicationShutdownHook][c.z.h.HikariDataSource:352] HikariPool-1 - Shutdown completed.
+2022-2022-07 19:11 [INFO][restartedMain][c.b.e.EmployeePayrollAppApplication:55] Starting EmployeePayrollAppApplication using Java 18.0.1 on Rust-Eze with PID 7356 (D:\CFP\EmployeePayrollApp\target\classes started by root in D:\CFP\EmployeePayrollApp)
+2022-2022-07 19:11 [INFO][restartedMain][c.b.e.EmployeePayrollAppApplication:640] The following 1 profile is active: "dev"
+2022-2022-07 19:11 [INFO][restartedMain][o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-2022-07 19:11 [INFO][restartedMain][o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-2022-07 19:11 [INFO][restartedMain][o.s.d.r.c.RepositoryConfigurationDelegate:132] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-2022-07 19:11 [INFO][restartedMain][o.s.d.r.c.RepositoryConfigurationDelegate:201] Finished Spring Data repository scanning in 49 ms. Found 1 JPA repository interfaces.
+2022-2022-07 19:11 [INFO][restartedMain][o.s.b.w.e.t.TomcatWebServer:108] Tomcat initialized with port(s): 8082 (http)
+2022-2022-07 19:11 [INFO][restartedMain][o.a.c.c.StandardService:173] Starting service [Tomcat]
+2022-2022-07 19:11 [INFO][restartedMain][o.a.c.c.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-2022-07 19:11 [INFO][restartedMain][o.a.c.c.C.[.[.[/]:173] Initializing Spring embedded WebApplicationContext
+2022-2022-07 19:11 [INFO][restartedMain][o.s.b.w.s.c.ServletWebServerApplicationContext:292] Root WebApplicationContext: initialization completed in 1646 ms
+2022-2022-07 19:11 [INFO][restartedMain][o.h.j.i.u.LogHelper:31] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-2022-07 19:11 [INFO][restartedMain][o.h.Version:44] HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-2022-07 19:11 [INFO][restartedMain][o.h.a.c.Version:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-2022-07 19:11 [INFO][restartedMain][c.z.h.HikariDataSource:110] HikariPool-1 - Starting...
+2022-2022-07 19:11 [WARN][restartedMain][c.z.h.u.DriverDataSource:70] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-2022-07 19:11 [INFO][restartedMain][c.z.h.HikariDataSource:123] HikariPool-1 - Start completed.
+2022-2022-07 19:11 [INFO][restartedMain][o.h.d.Dialect:175] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-2022-07 19:11 [WARN][restartedMain][o.h.t.s.i.ExceptionHandlerLoggedImpl:27] GenerationTarget encountered exception accepting command : Error executing DDL "alter table employee_department add constraint FKs4dyeombyuxnyppgvom1o0riq foreign key (id) references employee_payroll (id)" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table employee_department add constraint FKs4dyeombyuxnyppgvom1o0riq foreign key (id) references employee_payroll (id)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:581)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:526)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:452)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:263)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:123)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:196)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.bridgelabz.employeepayrollapp.EmployeePayrollAppApplication.main(EmployeePayrollAppApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`payroll_service_spring`.`#sql-1278_2f4`, CONSTRAINT `FKs4dyeombyuxnyppgvom1o0riq` FOREIGN KEY (`id`) REFERENCES `employee_payroll` (`id`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 36 common frames omitted
+2022-2022-07 19:11 [INFO][restartedMain][o.h.e.t.j.p.i.JtaPlatformInitiator:52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-2022-07 19:11 [INFO][restartedMain][o.s.o.j.LocalContainerEntityManagerFactoryBean:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-2022-07 19:11 [WARN][restartedMain][o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-2022-07 19:11 [INFO][restartedMain][o.s.b.d.a.OptionalLiveReloadServer:58] LiveReload server is running on port 35729
+2022-2022-07 19:11 [INFO][restartedMain][o.s.b.w.e.t.TomcatWebServer:220] Tomcat started on port(s): 8082 (http) with context path ''
+2022-2022-07 19:11 [INFO][restartedMain][c.b.e.EmployeePayrollAppApplication:61] Started EmployeePayrollAppApplication in 4.559 seconds (JVM running for 5.472)
+2022-2022-07 19:11 [INFO][http-nio-8082-exec-2][o.a.c.c.C.[.[.[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-2022-07 19:11 [INFO][http-nio-8082-exec-2][o.s.w.s.DispatcherServlet:525] Initializing Servlet 'dispatcherServlet'
+2022-2022-07 19:11 [INFO][http-nio-8082-exec-2][o.s.w.s.DispatcherServlet:547] Completed initialization in 0 ms
+2022-2022-07 19:11 [WARN][http-nio-8082-exec-2][o.h.e.j.s.SqlExceptionHelper:137] SQL Error: 1452, SQLState: 23000
+2022-2022-07 19:11 [ERROR][http-nio-8082-exec-2][o.h.e.j.s.SqlExceptionHelper:142] Cannot add or update a child row: a foreign key constraint fails (`payroll_service_spring`.`employee_department`, CONSTRAINT `FKqks3h83pxexx9bxcjiyjmhc6q` FOREIGN KEY (`id`) REFERENCES `employee` (`employee_id`))
+2022-2022-07 19:11 [INFO][http-nio-8082-exec-2][o.h.e.j.b.i.AbstractBatchImpl:213] HHH000010: On release of batch it still contained JDBC statements
+2022-2022-07 19:11 [ERROR][http-nio-8082-exec-2][o.a.c.c.C.[.[.[.[dispatcherServlet]:175] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`payroll_service_spring`.`employee_department`, CONSTRAINT `FKqks3h83pxexx9bxcjiyjmhc6q` FOREIGN KEY (`id`) REFERENCES `employee` (`employee_id`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:46)
+	at org.hibernate.persister.collection.AbstractCollectionPersister.recreate(AbstractCollectionPersister.java:1352)
+	at org.hibernate.action.internal.CollectionRecreateAction.execute(CollectionRecreateAction.java:50)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:344)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1407)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:489)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3290)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2425)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:449)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:654)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:407)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at jdk.proxy3/jdk.proxy3.$Proxy114.save(Unknown Source)
+	at com.bridgelabz.employeepayrollapp.service.EmployeeService.createEmployeePayrollData(EmployeeService.java:26)
+	at com.bridgelabz.employeepayrollapp.controller.EmpPayrollController.createEmployeePayrollData(EmpPayrollController.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1787)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-2022-07 19:11 [WARN][http-nio-8082-exec-5][o.h.e.j.s.SqlExceptionHelper:137] SQL Error: 1452, SQLState: 23000
+2022-2022-07 19:11 [ERROR][http-nio-8082-exec-5][o.h.e.j.s.SqlExceptionHelper:142] Cannot add or update a child row: a foreign key constraint fails (`payroll_service_spring`.`employee_department`, CONSTRAINT `FKqks3h83pxexx9bxcjiyjmhc6q` FOREIGN KEY (`id`) REFERENCES `employee` (`employee_id`))
+2022-2022-07 19:11 [INFO][http-nio-8082-exec-5][o.h.e.j.b.i.AbstractBatchImpl:213] HHH000010: On release of batch it still contained JDBC statements
+2022-2022-07 19:11 [ERROR][http-nio-8082-exec-5][o.a.c.c.C.[.[.[.[dispatcherServlet]:175] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`payroll_service_spring`.`employee_department`, CONSTRAINT `FKqks3h83pxexx9bxcjiyjmhc6q` FOREIGN KEY (`id`) REFERENCES `employee` (`employee_id`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:46)
+	at org.hibernate.persister.collection.AbstractCollectionPersister.recreate(AbstractCollectionPersister.java:1352)
+	at org.hibernate.action.internal.CollectionRecreateAction.execute(CollectionRecreateAction.java:50)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:344)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1407)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:489)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3290)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2425)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:449)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:654)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:407)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at jdk.proxy3/jdk.proxy3.$Proxy114.save(Unknown Source)
+	at com.bridgelabz.employeepayrollapp.service.EmployeeService.createEmployeePayrollData(EmployeeService.java:26)
+	at com.bridgelabz.employeepayrollapp.controller.EmpPayrollController.createEmployeePayrollData(EmpPayrollController.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1787)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-2022-07 19:12 [INFO][SpringApplicationShutdownHook][o.s.o.j.LocalContainerEntityManagerFactoryBean:651] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-2022-07 19:12 [INFO][SpringApplicationShutdownHook][c.z.h.HikariDataSource:350] HikariPool-1 - Shutdown initiated...
+2022-2022-07 19:12 [INFO][SpringApplicationShutdownHook][c.z.h.HikariDataSource:352] HikariPool-1 - Shutdown completed.
+2022-2022-07 19:18 [INFO][restartedMain][c.b.e.EmployeePayrollAppApplication:55] Starting EmployeePayrollAppApplication using Java 18.0.1 on Rust-Eze with PID 672 (D:\CFP\EmployeePayrollApp\target\classes started by root in D:\CFP\EmployeePayrollApp)
+2022-2022-07 19:18 [INFO][restartedMain][c.b.e.EmployeePayrollAppApplication:640] The following 1 profile is active: "dev"
+2022-2022-07 19:18 [INFO][restartedMain][o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-2022-07 19:18 [INFO][restartedMain][o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-2022-07 19:18 [INFO][restartedMain][o.s.d.r.c.RepositoryConfigurationDelegate:132] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-2022-07 19:18 [INFO][restartedMain][o.s.d.r.c.RepositoryConfigurationDelegate:201] Finished Spring Data repository scanning in 38 ms. Found 1 JPA repository interfaces.
+2022-2022-07 19:18 [INFO][restartedMain][o.s.b.w.e.t.TomcatWebServer:108] Tomcat initialized with port(s): 8082 (http)
+2022-2022-07 19:18 [INFO][restartedMain][o.a.c.c.StandardService:173] Starting service [Tomcat]
+2022-2022-07 19:18 [INFO][restartedMain][o.a.c.c.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-2022-07 19:18 [INFO][restartedMain][o.a.c.c.C.[.[.[/]:173] Initializing Spring embedded WebApplicationContext
+2022-2022-07 19:18 [INFO][restartedMain][o.s.b.w.s.c.ServletWebServerApplicationContext:292] Root WebApplicationContext: initialization completed in 1117 ms
+2022-2022-07 19:18 [INFO][restartedMain][o.h.j.i.u.LogHelper:31] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-2022-07 19:18 [INFO][restartedMain][o.h.Version:44] HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-2022-07 19:18 [INFO][restartedMain][o.h.a.c.Version:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-2022-07 19:18 [INFO][restartedMain][c.z.h.HikariDataSource:110] HikariPool-1 - Starting...
+2022-2022-07 19:18 [WARN][restartedMain][c.z.h.u.DriverDataSource:70] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-2022-07 19:18 [INFO][restartedMain][c.z.h.HikariDataSource:123] HikariPool-1 - Start completed.
+2022-2022-07 19:18 [INFO][restartedMain][o.h.d.Dialect:175] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-2022-07 19:18 [INFO][restartedMain][o.h.e.t.j.p.i.JtaPlatformInitiator:52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-2022-07 19:18 [INFO][restartedMain][o.s.o.j.LocalContainerEntityManagerFactoryBean:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-2022-07 19:18 [WARN][restartedMain][o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-2022-07 19:18 [INFO][restartedMain][o.s.b.d.a.OptionalLiveReloadServer:58] LiveReload server is running on port 35729
+2022-2022-07 19:18 [INFO][restartedMain][o.s.b.w.e.t.TomcatWebServer:220] Tomcat started on port(s): 8082 (http) with context path ''
+2022-2022-07 19:18 [INFO][restartedMain][c.b.e.EmployeePayrollAppApplication:61] Started EmployeePayrollAppApplication in 3.502 seconds (JVM running for 4.248)
+2022-2022-07 19:18 [INFO][http-nio-8082-exec-2][o.a.c.c.C.[.[.[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-2022-07 19:18 [INFO][http-nio-8082-exec-2][o.s.w.s.DispatcherServlet:525] Initializing Servlet 'dispatcherServlet'
+2022-2022-07 19:18 [INFO][http-nio-8082-exec-2][o.s.w.s.DispatcherServlet:547] Completed initialization in 0 ms
+2022-2022-07 19:21 [WARN][http-nio-8082-exec-9][o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver:208] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.bridgelabz.employeepayrollapp.dto.ResponseDTO> com.bridgelabz.employeepayrollapp.controller.EmpPayrollController.createEmployeePayrollData(com.bridgelabz.employeepayrollapp.dto.EmployeeDTO): [Field error in object 'employeeDTO' on field 'name': rejected value [ilesh]; codes [Pattern.employeeDTO.name,Pattern.name,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [employeeDTO.name,name]; arguments []; default message [name],[Ljavax.validation.constraints.Pattern$Flag;@43348800,^[A-Z]{1}[a-zA-Z\s]{2,}$]; default message [Employee Name Invalid]] ]
+2022-2022-07 19:21 [WARN][http-nio-8082-exec-1][o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver:208] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.bridgelabz.employeepayrollapp.dto.ResponseDTO> com.bridgelabz.employeepayrollapp.controller.EmpPayrollController.createEmployeePayrollData(com.bridgelabz.employeepayrollapp.dto.EmployeeDTO): [Field error in object 'employeeDTO' on field 'gender': rejected value [male]; codes [Pattern.employeeDTO.gender,Pattern.gender,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [employeeDTO.gender,gender]; arguments []; default message [gender],[Ljavax.validation.constraints.Pattern$Flag;@43348800,Male|Female]; default message [Gender needs to be Male or Female]] ]
+2022-2022-07 19:21 [WARN][http-nio-8082-exec-3][o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver:208] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.bridgelabz.employeepayrollapp.dto.ResponseDTO> com.bridgelabz.employeepayrollapp.controller.EmpPayrollController.createEmployeePayrollData(com.bridgelabz.employeepayrollapp.dto.EmployeeDTO): [Field error in object 'employeeDTO' on field 'salary': rejected value [400]; codes [Min.employeeDTO.salary,Min.salary,Min.long,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [employeeDTO.salary,salary]; arguments []; default message [salary],500]; default message [Min Wage should be more than 500]] ]
+2022-2022-07 19:21 [WARN][http-nio-8082-exec-6][o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver:208] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.bridgelabz.employeepayrollapp.dto.ResponseDTO> com.bridgelabz.employeepayrollapp.controller.EmpPayrollController.createEmployeePayrollData(com.bridgelabz.employeepayrollapp.dto.EmployeeDTO): [Field error in object 'employeeDTO' on field 'note': rejected value []; codes [NotBlank.employeeDTO.note,NotBlank.note,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [employeeDTO.note,note]; arguments []; default message [note]]; default message [Note cannot be Empty]] ]
+2022-2022-07 19:22 [WARN][http-nio-8082-exec-7][o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver:208] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.bridgelabz.employeepayrollapp.dto.ResponseDTO> com.bridgelabz.employeepayrollapp.controller.EmpPayrollController.createEmployeePayrollData(com.bridgelabz.employeepayrollapp.dto.EmployeeDTO): [Field error in object 'employeeDTO' on field 'profilePic': rejected value []; codes [NotBlank.employeeDTO.profilePic,NotBlank.profilePic,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [employeeDTO.profilePic,profilePic]; arguments []; default message [profilePic]]; default message [profilePic cannot be Empty]] ]
+2022-2022-07 19:22 [INFO][SpringApplicationShutdownHook][o.s.o.j.LocalContainerEntityManagerFactoryBean:651] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-2022-07 19:22 [INFO][SpringApplicationShutdownHook][c.z.h.HikariDataSource:350] HikariPool-1 - Shutdown initiated...
+2022-2022-07 19:22 [INFO][SpringApplicationShutdownHook][c.z.h.HikariDataSource:352] HikariPool-1 - Shutdown completed.
+2022-2022-07 19:24 [INFO][restartedMain][c.b.e.EmployeePayrollAppApplication:55] Starting EmployeePayrollAppApplication using Java 18.0.1 on Rust-Eze with PID 14832 (D:\CFP\EmployeePayrollApp\target\classes started by root in D:\CFP\EmployeePayrollApp)
+2022-2022-07 19:24 [INFO][restartedMain][c.b.e.EmployeePayrollAppApplication:640] The following 1 profile is active: "dev"
+2022-2022-07 19:24 [INFO][restartedMain][o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-2022-07 19:24 [INFO][restartedMain][o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-2022-07 19:24 [INFO][restartedMain][o.s.d.r.c.RepositoryConfigurationDelegate:132] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-2022-07 19:24 [INFO][restartedMain][o.s.d.r.c.RepositoryConfigurationDelegate:201] Finished Spring Data repository scanning in 64 ms. Found 1 JPA repository interfaces.
+2022-2022-07 19:24 [INFO][restartedMain][o.s.b.w.e.t.TomcatWebServer:108] Tomcat initialized with port(s): 8082 (http)
+2022-2022-07 19:24 [INFO][restartedMain][o.a.c.c.StandardService:173] Starting service [Tomcat]
+2022-2022-07 19:24 [INFO][restartedMain][o.a.c.c.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-2022-07 19:24 [INFO][restartedMain][o.a.c.c.C.[.[.[/]:173] Initializing Spring embedded WebApplicationContext
+2022-2022-07 19:24 [INFO][restartedMain][o.s.b.w.s.c.ServletWebServerApplicationContext:292] Root WebApplicationContext: initialization completed in 1403 ms
+2022-2022-07 19:24 [INFO][restartedMain][o.h.j.i.u.LogHelper:31] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-2022-07 19:24 [INFO][restartedMain][o.h.Version:44] HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-2022-07 19:24 [INFO][restartedMain][o.h.a.c.Version:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-2022-07 19:24 [INFO][restartedMain][c.z.h.HikariDataSource:110] HikariPool-1 - Starting...
+2022-2022-07 19:24 [WARN][restartedMain][c.z.h.u.DriverDataSource:70] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-2022-07 19:24 [INFO][restartedMain][c.z.h.HikariDataSource:123] HikariPool-1 - Start completed.
+2022-2022-07 19:24 [INFO][restartedMain][o.h.d.Dialect:175] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-2022-07 19:24 [INFO][restartedMain][o.h.e.t.j.p.i.JtaPlatformInitiator:52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-2022-07 19:24 [INFO][restartedMain][o.s.o.j.LocalContainerEntityManagerFactoryBean:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-2022-07 19:24 [WARN][restartedMain][o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-2022-07 19:24 [INFO][restartedMain][o.s.b.d.a.OptionalLiveReloadServer:58] LiveReload server is running on port 35729
+2022-2022-07 19:24 [INFO][restartedMain][o.s.b.w.e.t.TomcatWebServer:220] Tomcat started on port(s): 8082 (http) with context path ''
+2022-2022-07 19:24 [INFO][restartedMain][c.b.e.EmployeePayrollAppApplication:61] Started EmployeePayrollAppApplication in 4.605 seconds (JVM running for 5.523)
+2022-2022-07 19:25 [INFO][http-nio-8082-exec-1][o.a.c.c.C.[.[.[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-2022-07 19:25 [INFO][http-nio-8082-exec-1][o.s.w.s.DispatcherServlet:525] Initializing Servlet 'dispatcherServlet'
+2022-2022-07 19:25 [INFO][http-nio-8082-exec-1][o.s.w.s.DispatcherServlet:547] Completed initialization in 0 ms
+2022-2022-07 19:25 [INFO][SpringApplicationShutdownHook][o.s.o.j.LocalContainerEntityManagerFactoryBean:651] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-2022-07 19:25 [INFO][SpringApplicationShutdownHook][c.z.h.HikariDataSource:350] HikariPool-1 - Shutdown initiated...
+2022-2022-07 19:25 [INFO][SpringApplicationShutdownHook][c.z.h.HikariDataSource:352] HikariPool-1 - Shutdown completed.
