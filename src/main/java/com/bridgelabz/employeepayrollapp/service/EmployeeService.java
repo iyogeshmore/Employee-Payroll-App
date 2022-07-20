@@ -37,4 +37,8 @@ public class EmployeeService implements iEmployeeService{
         employeeRepository.deleteById(empID);
         return "Data Deleted";
     }
+    @Override
+    public List<Employee> getEmployeesByDepartment(String department) {
+        return employeeRepository.findEmployeeByDepartment(department);
+    }
 }
